@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar">
+  <a mat-button routerLink="/"> Employee Portal </a>
+
+  <form class="example-form" *ngIf="!notdisplaysearch">
+    <mat-form-field class="example-full-width">
+      <mat-label>search employee</mat-label>
+      <input
+        type="search"
+        matInput
+        class="form-control"
+        #searchInput
+        (input)="searchEmployees(searchInput.value)"
+      />
+    </mat-form-field>
+  </form>
+</mat-toolbar>

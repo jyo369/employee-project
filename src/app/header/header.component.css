@@ -1,0 +1,15 @@
+.toolbar {
+  background-color: rgb(76, 75, 75);
+  color: white;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 60%;
+  padding-left: 750px;
+  padding-top: 20px;
+}

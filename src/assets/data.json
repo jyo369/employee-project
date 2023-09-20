@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "firstname": "Rajani",
+    "lastname": "nadimpalli",
+    "birthdate": "1989-01-21",
+    "gender": "f",
+    "education": "graduate",
+    "company": "IBM",
+    "jobExperience": 1,
+    "salary": 1,
+    "profile": "3.png",
+    "category": "IT"
+  }
+]

@@ -1,0 +1,100 @@
+<app-header [notdisplaysearch]="true"></app-header>
+
+<mat-card>
+  <ng-container #appHighlighter="hl" [appHighlighted]="true">
+    <div class="course-card">
+      <div style="padding-left: 200px; padding-top: 10px">
+        <img
+          mat-card-image
+          src="../../assets/Images/{{ employee.profile }}"
+          alt="Profile Image"
+          class="profile"
+          style="
+            width: 26rem;
+            height: 20rem;
+            image-resolution: 50%;
+            opacity: 0.8;
+            box-shadow: 50%;
+            border-radius: 50%;
+          "
+        />
+        <div class="name">
+          {{ employee.firstname | titlecase }}
+          {{ employee.lastname | titlecase }}
+        </div>
+      </div>
+
+      <mat-card-content class="fixheight">
+        <div class="col">
+          <div
+            style="padding-top: 30px; height: 10px; width: 250px; float: left"
+          >
+            <table mat-table [dataSource]="dataSource1">
+              <ng-container matColumnDef="col">
+                <th
+                  mat-header-cell
+                  *matHeaderCellDef
+                  style="font-size: 0.9rem; font-weight: 500"
+                >
+                  Job Details
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.col }}
+                </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="colvalue">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.colvalue }}
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns1"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns1"></tr>
+            </table>
+          </div>
+          <div
+            style="padding-top: 30px; height: 10px; width: 250px; float: right"
+          >
+            <table mat-table [dataSource]="dataSource" style="height: 10px">
+              <ng-container matColumnDef="col">
+                <th
+                  mat-header-cell
+                  *matHeaderCellDef
+                  style="font-size: 0.85rem; font-weight: 500"
+                >
+                  Personal Details
+                </th>
+                <td mat-cell *matCellDef="let element">{{ element.col }}</td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="colvalue">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.colvalue }}
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+          </div>
+        </div>
+        <mat-card-actions>
+          <button
+            mat-stroked-button
+            type="button"
+            class="btn btn-outline-success"
+            (click)="back()"
+            class="back"
+          >
+            <mat-icon>arrow_left_alt</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card-content>
+    </div>
+  </ng-container>
+</mat-card>

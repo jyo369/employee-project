@@ -1,0 +1,98 @@
+.employee-card {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10px;
+  margin: 40px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.emloyee-child-card {
+  margin-bottom: 10px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 30px;
+  width: 200px;
+  box-shadow: 00 1px 16px 0 rgba(207, 4, 4, 0.2),
+    0 2px 8px 0 rgba(233, 12, 12, 0.14), 0 4px 8px -1px rgba(7, 42, 213, 0.12);
+
+  /* box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.14),
+    0 4px 8px -1px rgba(0, 0, 0, 0.12); */
+}
+
+.emloyee-child-card img {
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  margin-left: 30px;
+  height: 25px;
+  margin-left: 70px;
+  font-size: 17px;
+  background: white;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 00 2px 19px 0 rgba(252, 3, 3, 0.2),
+    0 2px 8px 0 rgba(233, 12, 12, 0.14), 0 4px 8px -1px rgba(7, 42, 213, 0.12);
+}
+
+course-card.is-last {
+  border-bottom: 2px solid grey;
+  padding-top: 20px;
+}
+
+course-card.is-even {
+  background: lightgray;
+}
+
+course-card.is-odd {
+  background: lightcyan;
+}
+
+.course-category {
+  margin-top: 15px;
+}
+
+.category {
+  margin-top: 15px;
+  background: lightcyan;
+  font-size: 14px;
+  color: grey;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 2px 3px;
+  display: inline;
+}
+
+.demo {
+  max-width: 300px;
+  margin: 20px auto;
+  font-size: 25px;
+}
+
+.warn {
+  color: red;
+}
+
+.highlighted {
+  box-shadow: 0 2px 12px 0 #121111, 0 3px 8px 0 rgba(193, 190, 190, 0.47),
+    0 6px 8px -1px #656262;
+}
+.it {
+  background-color: greenyellow;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.app-employee-card {
+  padding-top: 2px;
+  background-color: aqua;
+}

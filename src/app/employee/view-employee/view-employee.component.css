@@ -1,0 +1,70 @@
+.course-card {
+  background-color: rgba(252, 249, 249, 0.2);
+  height: 500px;
+  width: 600px;
+  color: rgb(16, 16, 16);
+  box-shadow: 00 1px 16px 0 rgba(207, 4, 4, 0.2),
+    0 2px 8px 0 rgba(233, 12, 12, 0.14), 0 4px 8px -1px rgba(7, 42, 213, 0.12);
+}
+.black-border {
+  border: 1px solid black;
+}
+
+img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+table {
+  width: 90%;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  padding: 0px 2rem;
+  padding-bottom: 2px;
+  padding-top: 10px;
+}
+
+.align-right {
+  justify-content: flex-end;
+}
+.mat-mdc-raised-button.color-button {
+  background-color: green;
+  color: purple;
+  border: 1px solid orange;
+}
+
+mat-card {
+  padding-left: 350px;
+  padding-top: 20px;
+  border: 1px solid orange;
+}
+
+button {
+  margin-top: 180px;
+  height: 25px;
+  margin-left: 200px;
+  margin-right: 20px;
+  font-size: 17px;
+  background: white;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 00 2px 19px 0 rgba(252, 3, 3, 0.2),
+    0 2px 8px 0 rgba(233, 12, 12, 0.14), 0 4px 8px -1px rgba(7, 42, 213, 0.12);
+}
+.color {
+  background: white;
+  color: white;
+}
+.mat-row:nth-child(even) {
+  background-color: #e4f0ec;
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #ffffff;
+}

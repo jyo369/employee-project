@@ -1,0 +1,26 @@
+<mat-card>
+  <ng-container #appHighlighter="hl" [appHighlighted]="true">
+    <div class="emloyee-child-card">
+      <ng-content select=".img"></ng-content>
+      <div>
+        <div>
+          <span class="name"
+            >{{ employee.firstname | titlecase }}
+            {{ this.lastname | titlecase }}</span
+          >
+        </div>
+        <div class="align-right">
+          <button
+            type="button"
+            (dblclick)="appHighlighter.toggle(false)"
+            class="btn btn-primary"
+            style="display: flex; align-items: flex-end"
+            (click)="view(employee.id)"
+          >
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</mat-card>
