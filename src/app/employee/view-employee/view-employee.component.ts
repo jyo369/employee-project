@@ -17,6 +17,10 @@ import { HttpClient } from '@angular/common/http';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
+export interface Section {
+  name: string;
+  updated: Date;
+}
 export interface DialogData {
   animal: string;
   name: string;
@@ -215,4 +219,28 @@ export class ViewEmployeeComponent {
   ngAfterViewInit() {
     console.log(this.ele);
   }
+  folders: Section[] = [
+    {
+      name: 'Photos',
+      updated: new Date('1/1/16'),
+    },
+    {
+      name: 'Recipes',
+      updated: new Date('1/17/16'),
+    },
+    {
+      name: 'Work',
+      updated: new Date('1/28/16'),
+    },
+  ];
+  notes: Section[] = [
+    {
+      name: 'Vacation Itinerary',
+      updated: new Date('2/20/16'),
+    },
+    {
+      name: 'Kitchen Remodel',
+      updated: new Date('1/18/16'),
+    },
+  ];
 }

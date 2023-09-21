@@ -3,15 +3,24 @@
 <mat-card>
   <ng-container #appHighlighter="hl" [appHighlighted]="true">
     <div class="course-card">
-      <div style="padding-left: 200px; padding-top: 10px">
+      <div
+        style="
+          padding-left: 10px;
+          background-color: rgb(195, 193, 192);
+          padding-top: 5px;
+          float: left;
+          width: 500px;
+          height: 455px;
+        "
+      >
         <img
           mat-card-image
           src="../../assets/Images/{{ employee.profile }}"
           alt="Profile Image"
           class="profile"
           style="
-            width: 26rem;
-            height: 20rem;
+            width: 25rem;
+            height: 25rem;
             image-resolution: 50%;
             opacity: 0.8;
             box-shadow: 50%;
@@ -23,11 +32,16 @@
           {{ employee.lastname | titlecase }}
         </div>
       </div>
-
-      <mat-card-content class="fixheight">
-        <div class="col">
+      <div>
+        <div class="">
           <div
-            style="padding-top: 30px; height: 10px; width: 250px; float: left"
+            style="
+              padding-top: 50px;
+              padding-right: 20px;
+              height: 20px;
+              width: 250px;
+              float: left;
+            "
           >
             <table mat-table [dataSource]="dataSource1">
               <ng-container matColumnDef="col">
@@ -56,7 +70,7 @@
             </table>
           </div>
           <div
-            style="padding-top: 30px; height: 10px; width: 250px; float: right"
+            style="padding-top: 50px; height: 20px; width: 250px; float: right"
           >
             <table mat-table [dataSource]="dataSource" style="height: 10px">
               <ng-container matColumnDef="col">
@@ -81,20 +95,19 @@
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
               <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
             </table>
+            <button
+              mat-stroked-button
+              type="button"
+              class="btn btn-outline-success"
+              (click)="back()"
+              style="margin-top: 210px; margin-left: 120px"
+            >
+              <mat-icon>arrow_left_alt</mat-icon>
+            </button>
           </div>
         </div>
-        <mat-card-actions>
-          <button
-            mat-stroked-button
-            type="button"
-            class="btn btn-outline-success"
-            (click)="back()"
-            class="back"
-          >
-            <mat-icon>arrow_left_alt</mat-icon>
-          </button>
-        </mat-card-actions>
-      </mat-card-content>
+        <div style="height: 100px; float: left"></div>
+      </div>
     </div>
   </ng-container>
 </mat-card>

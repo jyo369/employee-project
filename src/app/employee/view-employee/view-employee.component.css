@@ -1,7 +1,8 @@
 .course-card {
   background-color: rgba(252, 249, 249, 0.2);
-  height: 500px;
-  width: 600px;
+  height: 460px;
+  width: 1100px;
+
   color: rgb(16, 16, 16);
   box-shadow: 00 1px 16px 0 rgba(207, 4, 4, 0.2),
     0 2px 8px 0 rgba(233, 12, 12, 0.14), 0 4px 8px -1px rgba(7, 42, 213, 0.12);
@@ -26,7 +27,6 @@ table {
   letter-spacing: 2px;
   border-radius: 10px;
   padding: 0px 2rem;
-  padding-bottom: 2px;
   padding-top: 10px;
 }
 
@@ -40,8 +40,10 @@ table {
 }
 
 mat-card {
-  padding-left: 350px;
+  padding-left: 60px;
+  padding-right: 20px;
   padding-top: 20px;
+  padding-bottom: 40px;
   border: 1px solid orange;
 }
 
@@ -67,4 +69,7 @@ button {
 
 .mat-row:nth-child(odd) {
   background-color: #ffffff;
+}
+.button {
+  padding-bottom: 20px;
 }
