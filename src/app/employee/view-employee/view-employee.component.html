@@ -6,7 +6,7 @@
       <div
         style="
           padding-left: 10px;
-          background-color: rgb(195, 193, 192);
+          background-color: rgb(141, 139, 138);
           padding-top: 5px;
           float: left;
           width: 500px;
@@ -96,13 +96,15 @@
               <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
             </table>
             <button
-              mat-stroked-button
-              type="button"
+              mat-fab
+              extended
               class="btn btn-outline-success"
               (click)="back()"
               style="margin-top: 210px; margin-left: 120px"
+              [ngStyle]="{ background: ' rgb(98, 94, 92)' }"
             >
-              <mat-icon>arrow_left_alt</mat-icon>
+              <mat-icon>arrow_back</mat-icon>
+              Back
             </button>
           </div>
         </div>

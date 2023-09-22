@@ -11,13 +11,15 @@
         </div>
         <div class="align-right">
           <button
-            type="button"
+            mat-fab
+            extended
             (dblclick)="appHighlighter.toggle(false)"
             class="btn btn-primary"
-            style="display: flex; align-items: flex-end"
             (click)="view(employee.id)"
+            style="margin-left: 100px"
+            [ngStyle]="{ background: ' rgb(98, 94, 92)' }"
           >
-            View Details
+            View
           </button>
         </div>
       </div>

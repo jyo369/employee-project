@@ -63,7 +63,6 @@ describe('EmployeesComponent', () => {
       emp.firstname + ' ' + emp.lastname.charAt(0),
       'not same name'
     );
-
     expect(image.nativeElement.alt).toBe(emp.profile, "'not same image");
   });
 });
