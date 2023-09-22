@@ -1,5 +1,6 @@
 <app-header (search)="searchEmployees1($event)"></app-header>
-<mat-spinner *ngIf="showspinner"></mat-spinner>
+<ng-container *ngIf="showspinner"><mat-spinner></mat-spinner></ng-container>
+
 <!-- <mat-progress-spinner value="60"></mat-progress-spinner> -->
 <div
   (scroll)="f1($event)"
@@ -7,32 +8,36 @@
   id="scrollbardiv"
   style="overflow-y: scroll; height: 470px; width: 1250px"
 >
-  <div class="employee-card" *ngIf="employeesToDisplay?.length != 0">
-    <app-employee-card
-      [appHighlighted]="false"
-      (toggleHighlight)="toggle($event)"
-      *ngFor="
-        let e of employeesToDisplay;
-        first as isfirst;
-        trackBy: refreshemp
-      "
-      [class.is-first]="isfirst"
-      [employee]="e"
-      (employeeSelected)="selectedEmpDetails($event)"
-    >
-      <div class="img" #imgcontent [ngStyle]="{ paddingRight: '120px;' }">
-        <app-employee-image [profile]="e.profile"></app-employee-image>
-      </div>
-    </app-employee-card>
-  </div>
-  <div class="row mt-5" *ngIf="employeesToDisplay?.length == 0">
-    <div class="col text-center">
-      <h2
-        class="text-secondary fs-2 fw-bold fst-italic"
-        style="padding-left: 700px; padding-top: 100px"
+  <ng-container *ngIf="employeesToDisplay?.length != 0">
+    <div class="employee-card">
+      <app-employee-card
+        [appHighlighted]="false"
+        (toggleHighlight)="toggle($event)"
+        *ngFor="
+          let e of employeesToDisplay;
+          first as isfirst;
+          trackBy: refreshemp
+        "
+        [class.is-first]="isfirst"
+        [employee]="e"
+        (employeeSelected)="selectedEmpDetails($event)"
       >
-        There are No Employees Added!
-      </h2>
+        <div class="img" #imgcontent [ngStyle]="{ paddingRight: '120px;' }">
+          <app-employee-image [profile]="e.profile"></app-employee-image>
+        </div>
+      </app-employee-card>
     </div>
-  </div>
+  </ng-container>
+  <ng-container *ngIf="employeesToDisplay?.length == 0">
+    <div class="row mt-5">
+      <div class="col text-center">
+        <h2
+          class="text-secondary fs-2 fw-bold fst-italic"
+          style="padding-left: 700px; padding-top: 100px"
+        >
+          There are No Employees Added!
+        </h2>
+      </div>
+    </div>
+  </ng-container>
 </div>

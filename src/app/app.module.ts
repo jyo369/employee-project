@@ -43,6 +43,7 @@ import { ViewEmployeeComponent } from './employee/view-employee/view-employee.co
 import { MatDividerModule } from '@angular/material/divider';
 import { HeaderComponent } from './header/header.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ScrollDirective,
     ViewEmployeeComponent,
     HeaderComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

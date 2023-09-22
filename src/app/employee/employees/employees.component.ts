@@ -29,12 +29,11 @@ export class EmployeesComponent {
   constructor(private empService: EmployeeService) {}
   ngOnInit() {
     //get all employee details here
-
     this.empService.loadEmployees().subscribe((d) => {
       this.e1$ = d;
       this.employeesToDisplay = d.slice(0, 12);
       // this.employeesToDisplay = d;
-      if (this.employeesToDisplay.length > 10) {
+      if (this.employeesToDisplay.length != 0) {
         this.showspinner = false;
       }
     });

@@ -17,10 +17,6 @@ import { HttpClient } from '@angular/common/http';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
-export interface Section {
-  name: string;
-  updated: Date;
-}
 export interface DialogData {
   animal: string;
   name: string;
@@ -61,7 +57,7 @@ export class ViewEmployeeComponent {
   displayedColumns1: string[];
   dataSource: any;
   dataSource1: any;
-
+  showspinner: boolean = true;
   constructor(
     private route: ActivatedRoute,
     private httpClient: HttpClient,
@@ -77,17 +73,6 @@ export class ViewEmployeeComponent {
     this.displayedColumns = ['col', 'colvalue'];
     this.displayedColumns1 = ['col', 'colvalue'];
 
-    this.employeeForm = this.fb.group({
-      firstname: this.fb.control(''),
-      lastname: this.fb.control(''),
-      birthday: this.fb.control(''),
-      gender: this.fb.control(''),
-      education: this.fb.control('default'),
-      company: this.fb.control(''),
-      jobExperience: this.fb.control(''),
-      salary: this.fb.control(''),
-    });
-
     this.id = this.route.snapshot.params['id'];
 
     this.empService.loadEmployees().subscribe((data) => {
@@ -95,6 +80,9 @@ export class ViewEmployeeComponent {
       console.log(data);
       console.log(this.e2);
       this.employee = this.e2.find((ele: Employee) => ele?.id == this.id);
+      if (this.employee) {
+        this.showspinner = false;
+      }
       const g = this.employee.gender == 'm' ? 'Male' : 'Female';
       var date = new Date(this.employee.birthdate);
       this.dateformat =
@@ -121,93 +109,6 @@ export class ViewEmployeeComponent {
   get(g: string) {
     return g == 'm' ? 'Male' : 'Female';
   }
-  edit(event: any) {
-    this.employees.forEach((val, ind) => {
-      if (val.id === event) {
-        this.setForm(val);
-      }
-    });
-    this.removeEmployee(event);
-    //this.addEmployeeButton.nativeElement.click();
-  }
-
-  // edit(e: Employee) {
-  //   this.employeeSelected.emit(this.employee);
-  //   this.selectedEmployee = e;
-  //   this.showdetails = true;
-
-  // }
-
-  removeEmployee(event: any) {
-    this.employees.forEach((val, index) => {
-      // if (val.id === parseInt(event)) {
-      //   this.employeeService.deleteEmployee(event).subscribe((res) => {
-      //     this.employees.splice(index, 1);
-      //   });
-      // }
-
-      if (val.id === parseInt(event)) {
-        this.employees.splice(index, 1);
-      }
-      this.selectedEmployee = {};
-      this.showdetails = false;
-    });
-  }
-
-  setForm(emp: Employee) {
-    this.FirstName.setValue(emp.firstname);
-    this.LastName.setValue(emp.lastname);
-    this.BirthDay.setValue(emp.birthdate);
-    this.Gender.setValue(emp.gender);
-
-    let educationIndex = 0;
-    this.educationOptions.forEach((val, index) => {
-      if (val === emp.education) educationIndex = index;
-    });
-    this.Education.setValue(educationIndex);
-
-    this.Company.setValue(emp.company);
-    this.JobExperience.setValue(emp.jobExperience);
-    this.Salary.setValue(emp.salary);
-    this.fileInput.nativeElement.value = '';
-  }
-
-  clearForm() {
-    this.FirstName.setValue('');
-    this.LastName.setValue('');
-    this.BirthDay.setValue('');
-    this.Gender.setValue('');
-    this.Education.setValue('');
-    this.Company.setValue('');
-    this.JobExperience.setValue('');
-    this.Salary.setValue('');
-    this.fileInput.nativeElement.value = '';
-  }
-
-  public get FirstName(): FormControl {
-    return this.employeeForm.get('firstname') as FormControl;
-  }
-  public get LastName(): FormControl {
-    return this.employeeForm.get('lastname') as FormControl;
-  }
-  public get BirthDay(): FormControl {
-    return this.employeeForm.get('birthday') as FormControl;
-  }
-  public get Gender(): FormControl {
-    return this.employeeForm.get('gender') as FormControl;
-  }
-  public get Education(): FormControl {
-    return this.employeeForm.get('education') as FormControl;
-  }
-  public get Company(): FormControl {
-    return this.employeeForm.get('company') as FormControl;
-  }
-  public get JobExperience(): FormControl {
-    return this.employeeForm.get('jobExperience') as FormControl;
-  }
-  public get Salary(): FormControl {
-    return this.employeeForm.get('salary') as FormControl;
-  }
 
   back() {
     this.location.back();
@@ -219,28 +120,4 @@ export class ViewEmployeeComponent {
   ngAfterViewInit() {
     console.log(this.ele);
   }
-  folders: Section[] = [
-    {
-      name: 'Photos',
-      updated: new Date('1/1/16'),
-    },
-    {
-      name: 'Recipes',
-      updated: new Date('1/17/16'),
-    },
-    {
-      name: 'Work',
-      updated: new Date('1/28/16'),
-    },
-  ];
-  notes: Section[] = [
-    {
-      name: 'Vacation Itinerary',
-      updated: new Date('2/20/16'),
-    },
-    {
-      name: 'Kitchen Remodel',
-      updated: new Date('1/18/16'),
-    },
-  ];
 }

@@ -41,7 +41,10 @@ describe('EmployeesComponent', () => {
     fixture.detectChanges();
     const cards = el.queryAll(By.css('app-employee-card'));
     expect(cards).toBeTruthy();
-    expect(cards.length).toBeGreaterThan(0, 'app-employee-card');
+    expect(cards.length).toBeGreaterThan(
+      0,
+      'app-employee-card not having details'
+    );
   });
   it('should display the first course', () => {
     component.employeesToDisplay = Employees;

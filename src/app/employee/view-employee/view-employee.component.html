@@ -1,5 +1,5 @@
 <app-header [notdisplaysearch]="true"></app-header>
-
+<mat-spinner *ngIf="showspinner"></mat-spinner>
 <mat-card>
   <ng-container #appHighlighter="hl" [appHighlighted]="true">
     <div class="course-card">
